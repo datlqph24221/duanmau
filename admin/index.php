@@ -1,3 +1,6 @@
+<?php 
+    include './layout/header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Xin chào Trung 20t</p>
-    <p>Tạm biệt</p>
+    <h3 class="text-center bg-light text-success">Công cụ quản trị website</h3>
 </body>
 </html>
