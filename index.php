@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Xin chào Trung ahihi</p>
+    <p>Xin chào Trung 20t</p>
     <p>Tạm biệt</p>
 </body>
 </html>
