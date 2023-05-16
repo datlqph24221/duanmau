@@ -8,5 +8,6 @@
 </head>
 <body>
     <p>Xin chào</p>
+    <p>Tạm biệt</p>
 </body>
 </html>
