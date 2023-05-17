@@ -18,8 +18,9 @@
   <?php
         if(isset($_POST['btn_add'])){
             $ten_loai=$_POST['ten_loai'];
-            // header('Location: loai.php');
             loai_insert($ten_loai);
+            echo("Thêm thành công");
+            header('Location: loai.php');
       } 
 
     ?>

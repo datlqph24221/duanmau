@@ -1,16 +1,10 @@
 <?php 
     include './layout/header.php';
+    require '../dao/pdo.php';
+    require '../dao/hanghoa.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-    <h3 class="text-center bg-light text-success">Loại hàng</h3>
+    <h3 class="text-center bg-light text-success">Quản lý hàng hoá</h3>
 
     <table class="table table-condensed">
     <thead>
@@ -20,30 +14,45 @@
         <th>Ảnh</th>
         <th>Giá</th>
         <th>Giảm giá</th>
-        <th>Ngày nhập</th>
+        <th>Số lượt xem</th>
         <th>Mô tả</th>
         <th>Mã loại</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <th>
-            <button type="button" class="btn btn-info">Sửa</button>
-            <button type="button" class="btn btn-warning">Xoá</button>
-        </th>
+      <?php 
+        if(isset($_GET['ma_hh'])){
+          hang_hoa_delete($_GET['ma_hh']);
+        }
+        $hh=hang_hoa_select_all();
+        foreach($hh as $row){
+        extract($row);
+        $del_link="hanghoa.php?ma_hh=".$ma_hh;
+      ?>
+        <tr>
+          <td><?php echo $row['ma_hh'] ?></td>
+          <td><?php echo $row['ten_hh'] ?></td>
+          <td><img src="img/<?php echo $row['hinh'] ?>" alt="" width="200"></td>
+          <td><?php echo $row['don_gia'] ?></td>
+          <td><?php echo $row['giam_gia'] ?></td>
+          <td><?php echo $row['so_luot_xem'] ?></td>
+          <td><?php echo $row['mo_ta'] ?></td>
+          <td><?php echo $row['ma_loai'] ?></td>
+          
+
+          <th>
+              <button type="button" class="btn btn-info">Sửa</button>
+              <button type="button" class="btn btn-warning"><?php echo" <a href=".$del_link.">Xoá</a>" ?>  </button>
+          </th>
         
       </tr>
+      <?php    
+        }
+      ?>
+      
     </tbody>
-  </table>
-  <button type="button" class="btn btn-primary">Thêm hàng hoá</button>
+  </table><hr>
+  <a href="add_hanghoa.php" class="btn btn-primary">Thêm hàng hoá</a>
 </body>
 </html>
