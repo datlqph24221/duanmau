@@ -28,7 +28,7 @@
       <a class="nav-link" href="../admin/binhluan.php">Bình luận</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="../admin/khachhang.php">Khách hàng</a>
+      <a class="nav-link" href="../admin/taikhoan.php">Tài khoản</a>
     </li>
 	<li class="nav-item">
       <a class="nav-link" href="../admin/thongke.php">Thống kê</a>
