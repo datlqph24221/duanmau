@@ -29,6 +29,7 @@
         foreach($hh as $row){
         extract($row);
         $del_link="hanghoa.php?ma_hh=".$ma_hh;
+        $ed_link="ed_hanghoa.php?ma_hh=".$ma_hh;
       ?>
         <tr>
           <td><?php echo $row['ma_hh'] ?></td>
@@ -42,17 +43,17 @@
           
 
           <th>
-              <button type="button" class="btn btn-info">Sửa</button>
-              <button type="button" class="btn btn-warning"><?php echo" <a href=".$del_link.">Xoá</a>" ?>  </button>
+          <a class="btn btn-success" href="<?php echo "$ed_link" ?>">Sửa</a>
+              <button type="button" class="btn btn-warning"><?php echo" <a href=".$del_link.">Xoá</a>" ?></button>
           </th>
         
       </tr>
       <?php    
         }
       ?>
-      
+        
     </tbody>
   </table><hr>
-  <a href="add_hanghoa.php" class="btn btn-primary">Thêm hàng hoá</a>
+  <a href="in_hanghoa.php" class="btn btn-primary">Thêm hàng hoá</a>
 </body>
 </html>

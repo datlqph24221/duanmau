@@ -31,12 +31,13 @@
         foreach($loai as $row){
           extract($row);
           $del_link="loai.php?ma_loai=".$ma_loai;
+          $ed_link="ed_loai.php?ma_loai=".$ma_loai;
       ?>
       <tr>
         <td><?php echo $row['ma_loai'] ?></td>
         <td><?php echo $row['ten_loai'] ?></td>
         <th>
-            <button type="button" class="btn btn-info">Sửa</button>
+            <a class="btn btn-success" href="<?php echo "$ed_link" ?>">Sửa</a>
             <button type="button" class="btn btn-warning"><?php echo" <a href=".$del_link.">Xoá</a>" ?>  </button>
         </th>
       </tr>
@@ -45,6 +46,6 @@
       ?>
     </tbody>
   </table>
-  <a class="btn btn-primary " href="add_loai.php">Thêm loại</a>
+  <a class="btn btn-primary " href="in_loai.php">Thêm loại</a>
 </body>
 </html>

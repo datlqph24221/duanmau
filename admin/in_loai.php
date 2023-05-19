@@ -15,14 +15,12 @@
     <button type="submit" class="btn btn-primary" name="btn_add">Thêm</button>
   </form>
 
-  <?php
+    <?php
         if(isset($_POST['btn_add'])){
             $ten_loai=$_POST['ten_loai'];
             loai_insert($ten_loai);
-            echo("Thêm thành công");
             header('Location: loai.php');
       } 
-
     ?>
 </div>
 
